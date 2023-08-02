@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>SQUARE ROOT APP</title>
+	<style>
+		* { font-size:50px ;font-family:Cambria; }
+		body { background-color:lightblue; }
+		h1 { background-color:black; color:white; border-radius:30px;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+		
+			if (num.value == "")
+			{
+				alert("ENEMIES AHEAd");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+
+			if (n < 0.0)
+			{
+				alert("Negative no cha root tuzya baapani thevlay ky.. ");
+				ans.innerHTML = "";
+				num.focus();
+				num.value = "";
+				return;
+			}
+			
+			let r = Math.sqrt(n);
+			let msg = "Square = " +r.toFixed(3);	
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1>SQUARE ROOT FINDER</h1>
+	<form onsubmit="find()">
+	<input type="number" step="any" placeholder="ENTER ANY NUMBER" id="num" />
+	<br><br>
+	<input type="submit" value="FIND" />
+	</form>
+	<h2 id="ans" />
+</center>
+</body>
+</html>
+
